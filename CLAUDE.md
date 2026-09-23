@@ -104,7 +104,7 @@ Don't skip ahead. If I ask about a later step, answer briefly and bring me back 
 
 ## Progress (I update this myself)
 
-- [x] Step 0a  - [x] 0b  - [x] 0c  - [ ] 0d  - [ ] 0e
+- [x] Step 0a  - [x] 0b  - [x] 0c  - [x] 0d  - [ ] 0e
 - [ ] Step 1
 - [ ] Step 2
 - [ ] Step 3
