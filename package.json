@@ -1,0 +1,21 @@
+{
+  "name": "residency-pathway",
+  "version": "1.0.0",
+  "description": "this app helps a medical student to know what it takes and other relevant information about their residency program of aspiration.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aimepaccy/residency-pathway.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/aimepaccy/residency-pathway/issues"
+  },
+  "homepage": "https://github.com/aimepaccy/residency-pathway#readme"
+}
