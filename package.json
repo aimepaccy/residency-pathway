@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/aimepaccy/residency-pathway/issues"
   },
-  "homepage": "https://github.com/aimepaccy/residency-pathway#readme"
+  "homepage": "https://github.com/aimepaccy/residency-pathway#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
 }
