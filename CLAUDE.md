@@ -34,7 +34,7 @@ I am a clinical student learning software development. This project is a **learn
 
 A web app that helps a medical student plan a path to residency.
 
-**User flow:** the student opens the link → enters their **university** → picks a **specialty** → picks a **preferred region** (Africa, East Africa, Asia, Europe, US, Other [specify]) → the backend looks up matching info → the page shows 4 sections:
+**User flow:** the student opens the link → enters their **university** → picks a **specialty** → picks a **preferred region** (Africa, Asia, Europe, US, Other [specify]) → the backend looks up matching info → the page shows 4 sections:
 
 1. Best and most likely destinations
 2. What to do now
