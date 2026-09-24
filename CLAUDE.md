@@ -102,7 +102,7 @@ I am starting **from zero**: no folder, no repo, nothing created yet.
 
 Don't skip ahead. If I ask about a later step, answer briefly and bring me back to the current one.
 
-## Progress (I update this myself)
+## Progress (I and Claude can update it)
 
 - [x] Step 0a  - [x] 0b  - [x] 0c  - [x] 0d  - [x] 0e
 - [ ] Step 1
