@@ -1,3 +1,4 @@
 data/feedback.json
 node_modules/
 .env
+.vscode/
