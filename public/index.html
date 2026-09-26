@@ -1,22 +1,30 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Residency Pathway</title>
-    </head>
-    
-    <body>
-        <h1>Residency Pathway</h1>
-        <form id="pathway-form">
+
+<head>
+    <title>Residency Pathway</title>
+</head>
+
+<body>
+    <h1>Residency Pathway</h1>
+    <form id="pathway-form">
+        <div class="step">
             <label for="university">Your university</label>
             <input type="text" id="university" name="university">
+        </div>
 
+
+        <div class="step">
             <label for="specialty">Specialty</label>
             <select id="specialty" name="specialty">
                 <option value="">choose a specialty</option>
                 <option value="internal-medicine">Internal Medicine</option>
                 <option value="surgery">Surgery</option>
             </select>
+        </div>
 
+
+        <div class="step">
             <fieldset>
 
                 <legend>Preferred region</legend>
@@ -26,7 +34,13 @@
                 <label><input type="radio" name="region" value="us"> US</label>
                 <label><input type="radio" name="region" value="other"> Other</label>
             </fieldset>
+        </div>
 
-        </form>
-    </body>
+        <button type="button" id="back-btn">Back</button>
+        <button type="button" id="next-btn">Next</button>
+
+    </form>
+    <script src="app.js"></script>
+</body>
+
 </html>
