@@ -47,7 +47,7 @@ Below the sections there is a **feedback box**.
 
 - Frontend: plain HTML, CSS, JavaScript (in `public/`)
 - Backend: Node.js + Express (`server.js`)
-- Data: `data/pathways.json` (curated by me)
+- Data: `data/pathways.json`
 - Feedback: `data/feedback.json` locally, then a free hosted DB (Supabase) after deploy
 - Hosting: Render (free web service), deployed from GitHub
 - v2 only: Claude API, grounded in my curated data
@@ -101,7 +101,7 @@ I am starting **from zero**: no folder, no repo, nothing created yet.
 | 4 | `POST /api/pathway` returns the match (or a friendly "no match") | What an API/route is, JSON bodies, handling errors |
 | 5 | Frontend calls the API with `fetch` and shows 4 result cards | async/await, how the frontend talks to the backend |
 | 6 | Feedback box → `POST /api/feedback` → append to `feedback.json` | Saving data, reading/writing files in Node |
-| 7 | Test everything myself (all options, empty input, phone view) | Manual testing, browser DevTools, reading errors |
+| 7 | Test everything myself with your help (all options, empty input, phone view) | Manual testing, browser DevTools, reading errors |
 | 8 | Push to GitHub, deploy on Render | Deployment, build/start commands, why the free tier sleeps |
 | 9 | Move feedback to Supabase, using `.env` for secrets | Environment variables, why files reset on Render, keeping secrets out of git |
 | 10 | (v2) Claude API personalizes advice using my data | Calling an external API safely, grounding AI in real data |
