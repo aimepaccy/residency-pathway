@@ -1,5 +1,6 @@
 const express = require('express');
-
+const fs = require('fs');
+const FEEDBACK_FILE = 'data/feedback.json';
 const app = express();
 const PORT = 3000;
 const pathways = require('./data/pathways.json');
@@ -24,6 +25,13 @@ app.post('/api/feedback', (req, res) => {
         return res.status(400).json({ error: 'Feedback must be between 1 and 1000 characters.' });
     }
     console.log('Feedback received:', message);
+    const entry = { message: message.trim(), createdAt: new Date().toISOString() };
+    let allFeedback = [];
+    if (fs.existsSync(FEEDBACK_FILE)) {
+        allFeedback = JSON.parse(fs.readFileSync(FEEDBACK_FILE, 'utf8'));
+    }
+    allFeedback.push(entry);
+    fs.writeFileSync(FEEDBACK_FILE, JSON.stringify(allFeedback, null, 2));
     res.status(201).json({ ok: true });
 });
 
