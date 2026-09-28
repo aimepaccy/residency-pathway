@@ -1,0 +1,102 @@
+{
+    "internal-medicine": {
+        "africa": {
+            "destinations": [
+                "PLACEHOLDER internal-medicine africa destination 1",
+                "PLACEHOLDER internal-medicine africa destination 2"
+            ],
+            "whatToDoNow": [
+                "PLACEHOLDER internal-medicine africa step 1",
+                "PLACEHOLDER internal-medicine africa step 2"
+            ],
+            "requirements": [
+                "PLACEHOLDER internal-medicine africa requirement 1"
+            ],
+            "sites": [
+                "PLACEHOLDER internal-medicine africa site 1"
+            ]
+        },
+        "europe": {
+            "destinations": [
+                "PLACEHOLDER internal-medicine europe destination 1",
+                "PLACEHOLDER internal-medicine europe destination 2"
+            ],
+            "whatToDoNow": [
+                "PLACEHOLDER internal-medicine europe step 1",
+                "PLACEHOLDER internal-medicine europe step 2"
+            ],
+            "requirements": [
+                "PLACEHOLDER internal-medicine europe requirement 1"
+            ],
+            "sites": [
+                "PLACEHOLDER internal-medicine europe site 1"
+            ]
+        },
+        "asia": {
+            "destinations": [
+                "PLACEHOLDER internal-medicine asia destination 1",
+                "PLACEHOLDER internal-medicine asia destination 2"
+            ],
+            "whatToDoNow": [
+                "PLACEHOLDER internal-medicine asia step 1",
+                "PLACEHOLDER internal-medicine asia step 2"
+            ],
+            "requirements": [
+                "PLACEHOLDER internal-medicine asia requirement 1"
+            ],
+            "sites": [
+                "PLACEHOLDER internal-medicine asia site 1"
+            ]
+        }
+    },
+    "surgery": {
+        "africa": {
+            "destinations": [
+                "PLACEHOLDER surgery africa destination 1",
+                "PLACEHOLDER surgery africa destination 2"
+            ],
+            "whatToDoNow": [
+                "PLACEHOLDER surgery africa step 1",
+                "PLACEHOLDER surgery africa step 2"
+            ],
+            "requirements": [
+                "PLACEHOLDER surgery africa requirement 1"
+            ],
+            "sites": [
+                "PLACEHOLDER surgery africa site 1"
+            ]
+        },
+        "europe": {
+            "destinations": [
+                "PLACEHOLDER surgery europe destination 1",
+                "PLACEHOLDER surgery europe destination 2"
+            ],
+            "whatToDoNow": [
+                "PLACEHOLDER surgery europe step 1",
+                "PLACEHOLDER surgery europe step 2"
+            ],
+            "requirements": [
+                "PLACEHOLDER surgery europe requirement 1"
+            ],
+            "sites": [
+                "PLACEHOLDER surgery europe site 1"
+            ]
+        },
+        "asia": {
+            "destinations": [
+                "PLACEHOLDER surgery asia destination 1",
+                "PLACEHOLDER surgery asia destination 2"
+            ],
+            "whatToDoNow": [
+                "PLACEHOLDER surgery asia step 1",
+                "PLACEHOLDER surgery asia step 2"
+            ],
+            "requirements": [
+                "PLACEHOLDER surgery asia requirement 1"
+            ],
+            "sites": [
+                "PLACEHOLDER surgery asia site 1"
+            ]
+        }
+    }
+}
