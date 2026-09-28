@@ -3,6 +3,8 @@ const nextBtn = document.querySelector('#next-btn');
 const backBtn = document.querySelector('#back-btn');
 const form = document.querySelector('#pathway-form');
 const results = document.querySelector('#results');
+const feedbackForm = document.querySelector('#feedback-form');
+const feedbackStatus = document.querySelector('#feedback-status');
 let current = 0;
 
 function showStep(n) {
@@ -16,7 +18,7 @@ function addCard(title, items) {
     const heading = document.createElement('h2');
     heading.textContent = title;
     card.appendChild(heading);
-    
+
     const list = document.createElement('ul');
     items.forEach((item) => {
         const li = document.createElement('li');
@@ -24,7 +26,7 @@ function addCard(title, items) {
         list.appendChild(li);
     });
     card.appendChild(list);
-    
+
     results.appendChild(card);
 }
 showStep(current);
@@ -62,4 +64,15 @@ form.addEventListener('submit', async (event) => {
     addCard('What to do now', data.whatToDoNow);
     addCard('Requirements', data.requirements);
     addCard('Sites to visit for more info', data.sites);
+});
+
+feedbackForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    feedbackStatus.textContent = '';
+    const message = document.querySelector('#feedback').value.trim();
+    if (!message) {
+        feedbackStatus.textContent = 'Please write something before sending.';
+        return;
+    }
+    console.log('Feedback to send:', message);
 });
