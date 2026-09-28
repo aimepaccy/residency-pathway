@@ -113,7 +113,7 @@ Don't skip ahead. If I ask about a later step, answer briefly and bring me back 
 - [x] Step 0a  - [x] 0b  - [x] 0c  - [x] 0d  - [x] 0e
 - [x] Step 1
 - [x] Step 2
-- [ ] Step 3
+- [x] Step 3
 - [ ] Step 4
 - [ ] Step 5
 - [ ] Step 6
