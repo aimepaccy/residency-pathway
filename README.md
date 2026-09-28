@@ -1,8 +1,19 @@
-# Residency pathway
-this app helps a medical student to know what it takes and other relevant information about their residency program of aspiration.
+# Residency Pathway
 
-> Work in Progress: a learning project
+A web app that helps medical students plan their path to residency.
 
+> Work in progress: a learning project
+
+## What it does
+
+- The student enters their university, chooses a specialty and picks a preferred region.
+- The server looks up the matching entry in `data/pathways.json`.
+- The page shows four sections: best and most likely destinations, what to do now, requirements, and sites to visit for more info.
+- If there is no data yet for that combination, the page says so.
+
+## Disclaimer
+
+All content is currently placeholder data, not real residency advice. Do not use this app to make decisions about your residency applications. Always check official sources such as ECFMG, NRMP, national medical councils and program websites.
 
 ## How to run locally
 
@@ -27,8 +38,15 @@ You need [Node.js](https://nodejs.org) (which includes npm) and [Git](https://gi
 
 ```
 residency-pathway/
-├── server.js       backend: the Express server
-├── package.json    project info and dependencies
-└── public/         files the browser receives
-    └── index.html
+├── README.md          what the project is and how to run it
+├── CLAUDE.md          instructions for the Claude tutor
+├── .gitignore         files git must not track
+├── package.json       project info and dependencies
+├── package-lock.json  exact dependency versions
+├── server.js          backend: the Express server and API route
+├── data/
+│   └── pathways.json  curated pathway data (placeholder for now)
+└── public/            files the browser receives
+    ├── index.html     the page and the form
+    └── app.js         form steps, fetch call and result cards
 ```
