@@ -74,5 +74,16 @@ feedbackForm.addEventListener('submit', async (event) => {
         feedbackStatus.textContent = 'Please write something before sending.';
         return;
     }
-    console.log('Feedback to send:', message);
+    const response = await fetch('/api/feedback', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message })
+    });
+    if (!response.ok) {
+        feedbackStatus.textContent = 'Sorry, your feedback could not be sent.';
+        return;
+    }
+    feedbackStatus.textContent = 'Thank you for your feedback!';
+    document.querySelector('#feedback').value = '';
+
 });

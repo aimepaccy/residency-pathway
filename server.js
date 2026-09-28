@@ -18,6 +18,14 @@ app.post('/api/pathway', (req, res) => {
     }
     res.json(specialtyData[region]);
 });
+app.post('/api/feedback', (req, res) => {
+    const message = req.body.message;
+    if (typeof message !== 'string' || message.trim() === '' || message.length > 1000) {
+        return res.status(400).json({ error: 'Feedback must be between 1 and 1000 characters.' });
+    }
+    console.log('Feedback received:', message);
+    res.status(201).json({ ok: true });
+});
 
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
