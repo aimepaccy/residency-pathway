@@ -13,6 +13,8 @@ function showStep(n) {
         step.hidden = index !== n;
     });
     submitBtn.hidden = n !== steps.length - 1;
+    nextBtn.hidden = n === steps.length - 1;
+    backBtn.hidden = n === 0;
 }
 
 function addCard(title, items) {
