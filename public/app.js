@@ -15,6 +15,7 @@ function showStep(n) {
     submitBtn.hidden = n !== steps.length - 1;
     nextBtn.hidden = n === steps.length - 1;
     backBtn.hidden = n === 0;
+    results.textContent = '';
 }
 
 function addCard(title, items) {
