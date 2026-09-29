@@ -31,7 +31,15 @@ app.post('/api/feedback', (req, res) => {
     const entry = { message: message.trim(), createdAt: new Date().toISOString() };
     let allFeedback = [];
     if (fs.existsSync(FEEDBACK_FILE)) {
-        allFeedback = JSON.parse(fs.readFileSync(FEEDBACK_FILE, 'utf8'));
+        const text = fs.readFileSync(FEEDBACK_FILE, 'utf8');
+        if (text.trim() !== '') {
+            try {
+                allFeedback = JSON.parse(text);
+            } catch (err) {
+                console.error('feedback.json is not valid JSON:', err.message);
+                return res.status(500).json({ error: 'Could not save feedback right now.' });
+            }
+        }
     }
     allFeedback.push(entry);
     fs.writeFileSync(FEEDBACK_FILE, JSON.stringify(allFeedback, null, 2));
