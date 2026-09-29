@@ -4,6 +4,7 @@
   "description": "this app helps a medical student to know what it takes and other relevant information about their residency program of aspiration.",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

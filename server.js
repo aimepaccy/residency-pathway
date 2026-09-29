@@ -2,7 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const FEEDBACK_FILE = 'data/feedback.json';
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const pathways = require('./data/pathways.json');
 
 app.use(express.json());
