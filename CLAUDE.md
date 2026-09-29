@@ -118,7 +118,7 @@ Don't skip ahead. If I ask about a later step, answer briefly and bring me back 
 - [x] Step 5
 - [x] Step 6
 - [x] Step 7
-- [ ] Step 8
+- [x] Step 8
 - [ ] Step 9
 - [ ] Step 10
 
