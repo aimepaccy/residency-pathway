@@ -48,7 +48,13 @@ form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const university = document.querySelector('#university').value;
     const specialty = document.querySelector('#specialty').value;
-    const region = document.querySelector('input[name="region"]:checked').value;
+    const checkedRegion = document.querySelector('input[name="region"]:checked');
+    if (!checkedRegion) {
+        results.textContent = 'Please choose a region.';
+        return;
+    }
+    const region = checkedRegion.value;
+
     const response = await fetch('/api/pathway', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
