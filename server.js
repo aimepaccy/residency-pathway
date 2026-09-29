@@ -13,6 +13,9 @@ app.post('/api/pathway', (req, res) => {
     const specialty = req.body.specialty;
     const region = req.body.region;
     console.log('Received:', specialty, region);
+    if (!specialty || !region) {
+        return res.status(400).json({ error: 'Please choose both a specialty and a region.' });
+    }
     const specialtyData = pathways[specialty];
     if (!specialtyData || !specialtyData[region]) {
         return res.status(404).json({ error: 'Sorry, we have no information for that specialty and region yet.' });

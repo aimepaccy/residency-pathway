@@ -52,6 +52,10 @@ form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const university = document.querySelector('#university').value;
     const specialty = document.querySelector('#specialty').value;
+    if (!specialty) {
+        results.textContent = 'Please choose a specialty.';
+        return;
+    }
     const checkedRegion = document.querySelector('input[name="region"]:checked');
     if (!checkedRegion) {
         results.textContent = 'Please choose a region.';
