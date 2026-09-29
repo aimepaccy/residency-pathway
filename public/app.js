@@ -1,6 +1,7 @@
 const steps = document.querySelectorAll('.step');
 const nextBtn = document.querySelector('#next-btn');
 const backBtn = document.querySelector('#back-btn');
+const submitBtn = document.querySelector('#submit-btn');
 const form = document.querySelector('#pathway-form');
 const results = document.querySelector('#results');
 const feedbackForm = document.querySelector('#feedback-form');
@@ -11,6 +12,7 @@ function showStep(n) {
     steps.forEach((step, index) => {
         step.hidden = index !== n;
     });
+    submitBtn.hidden = n !== steps.length - 1;
 }
 
 function addCard(title, items) {
