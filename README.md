@@ -4,6 +4,12 @@ A web app that helps medical students plan their path to residency.
 
 > Work in progress: a learning project
 
+## Live demo
+
+Try it here: [Residency Pathway](https://residency-pathway.onrender.com/)
+
+The app runs on Render's free tier, which puts the server to sleep when it is idle. The first page load can take a few seconds while it wakes up.
+
 ## What it does
 
 - The student enters their university, chooses a specialty and picks a preferred region.
