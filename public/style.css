@@ -32,3 +32,10 @@ button {
 button:hover {
     background-color: rgb(254, 180, 249);
 }
+
+section {
+    background-color: rgb(30, 29, 56);
+    padding: 16px;
+    margin-top: 16px;
+    border-radius: 6px;
+}
