@@ -2,6 +2,8 @@ body {
     color: aliceblue;
     background-color: rgb(80, 55, 55);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 h1 {
