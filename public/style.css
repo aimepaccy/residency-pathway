@@ -15,6 +15,11 @@ h1 {
     padding: 16px;
 }
 
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
 input,
 select,
 button,
