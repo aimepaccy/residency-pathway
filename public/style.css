@@ -2,6 +2,15 @@ body {
     color: aliceblue;
     background-color: rgb(80, 55, 55);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    margin-top: auto;
 }
 
 h1 {
@@ -9,8 +18,13 @@ h1 {
 }
 
 .step {
-    background-color: rgb(79, 91, 49);
+    background-color: rgb(30, 29, 56);
     padding: 16px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
 }
 
 input,
@@ -18,4 +32,25 @@ select,
 button,
 textarea {
     font-family: inherit;
+}
+
+button {
+    background-color: rgb(165, 244, 208);
+    color: black;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(254, 180, 249);
+}
+
+section {
+    background-color: rgb(30, 29, 56);
+    padding: 16px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    border-radius: 6px;
 }
