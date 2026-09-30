@@ -1,6 +1,7 @@
 body {
     color: aliceblue;
     background-color: rgb(80, 55, 55);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 h1 {
@@ -10,4 +11,11 @@ h1 {
 .step {
     background-color: rgb(79, 91, 49);
     padding: 16px;
+}
+
+input,
+select,
+button,
+textarea {
+    font-family: inherit;
 }
