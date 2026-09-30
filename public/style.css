@@ -1,0 +1,13 @@
+body {
+    color: aliceblue;
+    background-color: rgb(80, 55, 55);
+}
+
+h1 {
+    color: rgb(160, 242, 172);
+}
+
+.step {
+    background-color: rgb(79, 91, 49);
+    padding: 16px;
+}
