@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const fs = require('fs');
 const FEEDBACK_FILE = 'data/feedback.json';

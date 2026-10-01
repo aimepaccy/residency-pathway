@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/aimepaccy/residency-pathway#readme",
   "dependencies": {
+    "dotenv": "^18.0.5",
     "express": "^5.2.1"
   }
 }
