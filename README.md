@@ -16,6 +16,7 @@ The app runs on Render's free tier, which puts the server to sleep when it is id
 - The server looks up the matching entry in `data/pathways.json`.
 - The page shows four sections: best and most likely destinations, what to do now, requirements, and sites to visit for more info.
 - If there is no data yet for that combination, the page says so.
+- Below the results, a feedback box saves anonymous comments to a Supabase (Postgres) database.
 
 ## Disclaimer
 
@@ -34,11 +35,22 @@ You need [Node.js](https://nodejs.org) (which includes npm) and [Git](https://gi
    ```
    npm install
    ```
-3. Start the server:
+3. Set up the database. Create a free project on [Supabase](https://supabase.com), open its SQL Editor and run:
+   ```sql
+   create table feedback (
+     id bigint generated always as identity primary key,
+     message text not null,
+     created_at timestamptz not null default now()
+   );
+
+   alter table feedback enable row level security;
+   ```
+4. Add your secrets. Copy `.env.example` to a new file called `.env`, then fill in `SUPABASE_URL` and `SUPABASE_SECRET_KEY` from your Supabase project settings. Never commit `.env`.
+5. Start the server:
    ```
    node server.js
    ```
-4. Open http://localhost:3000 in your browser. Press Ctrl+C in the terminal to stop the server.
+6. Open http://localhost:3000 in your browser. Press Ctrl+C in the terminal to stop the server.
 
 ## Folder structure
 
@@ -47,12 +59,14 @@ residency-pathway/
 ├── README.md          what the project is and how to run it
 ├── CLAUDE.md          instructions for the Claude tutor
 ├── .gitignore         files git must not track
+├── .env.example       names of the required secrets, no values
 ├── package.json       project info and dependencies
 ├── package-lock.json  exact dependency versions
-├── server.js          backend: the Express server and API route
+├── server.js          backend: the Express server and API routes
 ├── data/
 │   └── pathways.json  curated pathway data (placeholder for now)
 └── public/            files the browser receives
     ├── index.html     the page and the form
-    └── app.js         form steps, fetch call and result cards
+    ├── style.css      layout and styling
+    └── app.js         form steps, fetch calls and result cards
 ```

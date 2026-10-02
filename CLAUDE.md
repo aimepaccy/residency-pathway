@@ -119,7 +119,7 @@ Don't skip ahead. If I ask about a later step, answer briefly and bring me back 
 - [x] Step 6
 - [x] Step 7
 - [x] Step 8
-- [ ] Step 9
+- [x] Step 9
 - [ ] Step 10
 
 At the start of each session, read this Progress list and `git log --oneline`, tell me where we left off in one or two sentences, and continue from there.
