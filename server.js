@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
-const fs = require('fs');
-const FEEDBACK_FILE = 'data/feedback.json';
+const { createClient } = require('@supabase/supabase-js');
+const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SECRET_KEY);
 const app = express();
 const PORT = process.env.PORT || 3000;
 const pathways = require('./data/pathways.json');
@@ -23,27 +23,17 @@ app.post('/api/pathway', (req, res) => {
     }
     res.json(specialtyData[region]);
 });
-app.post('/api/feedback', (req, res) => {
+app.post('/api/feedback', async (req, res) => {
     const message = req.body.message;
     if (typeof message !== 'string' || message.trim() === '' || message.length > 1000) {
         return res.status(400).json({ error: 'Feedback must be between 1 and 1000 characters.' });
     }
     console.log('Feedback received:', message);
-    const entry = { message: message.trim(), createdAt: new Date().toISOString() };
-    let allFeedback = [];
-    if (fs.existsSync(FEEDBACK_FILE)) {
-        const text = fs.readFileSync(FEEDBACK_FILE, 'utf8');
-        if (text.trim() !== '') {
-            try {
-                allFeedback = JSON.parse(text);
-            } catch (err) {
-                console.error('feedback.json is not valid JSON:', err.message);
-                return res.status(500).json({ error: 'Could not save feedback right now.' });
-            }
-        }
+    const { error } = await supabase.from('feedback').insert({ message: message.trim() });
+    if (error) {
+        console.error('Supabase insert failed:', error.message);
+        return res.status(500).json({ error: 'Could not save feedback right now.' });
     }
-    allFeedback.push(entry);
-    fs.writeFileSync(FEEDBACK_FILE, JSON.stringify(allFeedback, null, 2));
     res.status(201).json({ ok: true });
 });
 
