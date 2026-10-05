@@ -41,7 +41,7 @@ app.use(express.json());
 
 app.use(express.static('public'));
 
-app.post('/api/pathway', (req, res) => {
+app.post('/api/pathway', async (req, res) => {
     const specialty = req.body.specialty;
     const region = req.body.region;
     console.log('Received:', specialty, region);
@@ -52,7 +52,14 @@ app.post('/api/pathway', (req, res) => {
     if (!specialtyData || !specialtyData[region]) {
         return res.status(404).json({ error: 'Sorry, we have no information for that specialty and region yet.' });
     }
-    res.json(specialtyData[region]);
+    const match = specialtyData[region];
+    let advice = null;
+    try {
+        advice = await getAdvice(specialty, region, match);
+    } catch (err) {
+        console.error('Advice failed:', err.message);
+    }
+    res.json({ ...match, advice });
 });
 app.post('/api/feedback', async (req, res) => {
     const message = req.body.message;
