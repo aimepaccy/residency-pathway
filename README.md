@@ -16,11 +16,13 @@ The app runs on Render's free tier, which puts the server to sleep when it is id
 - The server looks up the matching entry in `data/pathways.json`.
 - The page shows four sections: best and most likely destinations, what to do now, requirements, and sites to visit for more info.
 - If there is no data yet for that combination, the page says so.
+- A fifth card gives short personalised advice written by an AI model (`openai/gpt-oss-120b` on Groq's free tier). The model is grounded: it may only use the matching entry from `pathways.json`, and it says so when information is missing instead of inventing it. The card is labelled as AI-generated.
+- If the AI service is unavailable, the four main cards still appear and the AI card is simply left out.
 - Below the results, a feedback box saves anonymous comments to a Supabase (Postgres) database.
 
 ## Disclaimer
 
-All content is currently placeholder data, not real residency advice. Do not use this app to make decisions about your residency applications. Always check official sources such as ECFMG, NRMP, national medical councils and program websites.
+All content is currently placeholder data, not real residency advice, and the AI advice can only be as accurate as that data. Do not use this app to make decisions about your residency applications. Always check official sources such as ECFMG, NRMP, national medical councils and program websites.
 
 ## How to run locally
 
@@ -45,12 +47,13 @@ You need [Node.js](https://nodejs.org) (which includes npm) and [Git](https://gi
 
    alter table feedback enable row level security;
    ```
-4. Add your secrets. Copy `.env.example` to a new file called `.env`, then fill in `SUPABASE_URL` and `SUPABASE_SECRET_KEY` from your Supabase project settings. Never commit `.env`.
-5. Start the server:
+4. Get a free API key from [Groq](https://console.groq.com) (API Keys page).
+5. Add your secrets. Copy `.env.example` to a new file called `.env`, then fill in `SUPABASE_URL` and `SUPABASE_SECRET_KEY` from your Supabase project settings, and `GROQ_API_KEY` from Groq. Never commit `.env`. Without a Groq key the app still works, just without the AI card.
+6. Start the server:
    ```
    node server.js
    ```
-6. Open http://localhost:3000 in your browser. Press Ctrl+C in the terminal to stop the server.
+7. Open http://localhost:3000 in your browser. Press Ctrl+C in the terminal to stop the server.
 
 ## Folder structure
 
@@ -62,7 +65,7 @@ residency-pathway/
 ├── .env.example       names of the required secrets, no values
 ├── package.json       project info and dependencies
 ├── package-lock.json  exact dependency versions
-├── server.js          backend: the Express server and API routes
+├── server.js          backend: the Express server, API routes and the Groq call
 ├── data/
 │   └── pathways.json  curated pathway data (placeholder for now)
 └── public/            files the browser receives
